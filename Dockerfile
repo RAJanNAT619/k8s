@@ -1,2 +1,4 @@
-FROM php:8.0-apache as base
-COPY ./k8s/ /var/www/html
+FROM php:8.2-cli
+COPY . /var/www/html
+WORKDIR /var/www/html
+CMD [ "php", "./index.html" ]
