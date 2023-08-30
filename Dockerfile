@@ -1,7 +1,2 @@
-FROM ubuntu
-RUN apt install php libapache2-mod-php -y
-RUN apt install php-cli -y
-RUN apt install php-cgi -y
-RUN systemctl restart apache2.service
-
-COPY ./myproj/ /var/www/html
+FROM php:8.0-apache as base
+COPY ./k8s/ /var/www/html
