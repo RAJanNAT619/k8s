@@ -1,4 +1,3 @@
-RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
 FROM python:3.9  
 WORKDIR /code
 COPY ./requirements.txt /code/requirements.txt
