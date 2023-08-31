@@ -1,4 +1,3 @@
-FROM php:8.2-cli
-COPY . /var/www/html
-WORKDIR /var/www/html
-CMD [ "php", "./index.html" ]
+FROM ubuntu
+RUN echo "Hello" > /tmp/testfile
+RUN apt-get install tree -y
