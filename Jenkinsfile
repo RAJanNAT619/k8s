@@ -8,14 +8,14 @@ pipeline {
         }
         stage("Stage 2: Build Docker image") {
             steps {
-                sh("sudo docker build -t natraj619/jen_image:latest /var/lib/jenkins/workspace/jen_proj")
-                sh("sudo docker tag natraj619/jen_image:latest natraj619/jen_image:${BUILD_NUMBER}")
+                sh("sudo docker build -t natraj619/practice1:latest /var/lib/jenkins/workspace/jen_proj")
+                sh("sudo docker tag natraj619/practice1:latest natraj619/practice1:${BUILD_NUMBER}")
             }
         }
         stage("Stage 3: Push the Docker image") {
             steps {
-                sh("sudo docker image push natraj619/jen_image:latest")
-                sh("sudo docker image push natraj619/jen_image:${BUILD_NUMBER}")
+                sh("sudo docker image push natraj619/practice1:latest")
+                sh("sudo docker image push natraj619/practice1:${BUILD_NUMBER}")
             }
         }
         stage("Stage 4: Deploy on Kubernetes") {
